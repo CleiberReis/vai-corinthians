@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "start:dev": "webpack-dev-server",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Cleiber Reis",
   "license": "ISC",
