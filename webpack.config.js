@@ -7,7 +7,7 @@ const path = require('path');
 module.exports = {
     entry: './src/exports.js',
     output: {
-        filename: 'js/bundle.js',
+        filename: 'assets/js/bundle.js',
         path: path.resolve(__dirname, './dist')
     },
     devServer: {
@@ -33,18 +33,18 @@ module.exports = {
                 //'style-loader', //adiciona CSS a DOM injetando a tag <style>
                 'css-loader', // interpreta os imports, url() ...
                 'sass-loader', // carrega os arquivos sass
-            ]
+            ],
         }, {
-            test: /\.(png|svg|jpg|gif)$/,
+            test: /\.(png|jpe?g|gif)$/i,
             use: [
                 {
                   loader: 'file-loader',
                   options: {
                     name: '[name].[ext]',
-                    publicPath: 'assets/css',
+                    outputPath: 'assets/images',
                   },
                 },
-              ]
+              ],
         }, {
             test: /\.m?js$/,
             exclude: /(node_modules)/,
@@ -52,9 +52,9 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     presets: ['@babel/preset-env']
-                }
-            }
-        }
-      ]
+                },
+            },
+        },
+      ],
     },
 };
