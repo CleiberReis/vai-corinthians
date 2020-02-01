@@ -1,0 +1,31 @@
+// https://github.com/jgthms/bulma/issues/451#issuecomment-331758839
+
+$sizeUnit: rem
+$marginKey: 'm'
+$paddingKey: 'p'
+$separator: '-'
+$sizes: ('auto', 'auto'), ('0', 0), ('1', 0.25), ('2', 0.5), ('3', 1), ('4', 2), ('5', 3), ('6', 4), ('7', 5)
+$positions: ('t', 'top'), ('r', 'right'), ('b', 'bottom'), ('l', 'left')
+
+@function sizeValue($key, $value)
+  @return if($key == 'auto', auto, $value + $sizeUnit)
+
+@each $size in $sizes
+  $sizeKey:   nth($size, 1)
+  $sizeValue: nth($size, 2)
+
+  .#{$marginKey}#{$separator}#{$sizeKey}
+    margin: sizeValue($sizeKey, $sizeValue)
+
+  .#{$paddingKey}#{$separator}#{$sizeKey}
+    padding: sizeValue($sizeKey, $sizeValue)
+
+  @each $position in $positions
+    $posKey:   nth($position, 1)
+    $posValue: nth($position, 2)
+
+    .#{$marginKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey}
+      margin-#{$posValue}: sizeValue($sizeKey, $sizeValue)
+
+    .#{$paddingKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey}
+      padding-#{$posValue}: sizeValue($sizeKey, $sizeValue)

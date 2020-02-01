@@ -1,10 +1,14 @@
-*{
+html, body {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 img {
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+    border: 5px solid black;
+    max-width: 300px;
+    max-height: 300px;
 }

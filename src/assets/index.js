@@ -1,6 +1,7 @@
 import './css/main.css'
 import './js/main.js'
 import './scss/global.scss'
+import './scss/spacing.sass'
 
 // Import das imagens
 import './images/image01.jpeg'
