@@ -1,1 +1,1 @@
-import './assets'
+import './assets';

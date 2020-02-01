@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist')
   },
   devServer: {
+    inline: true,
     contentBase: "./dist",
     port: 9000
   },
@@ -36,7 +37,7 @@ module.exports = {
               outputPath: '/assets/images'
             },
           },
-      
+
           {
             loader: 'image-webpack-loader',
             options: {
@@ -64,12 +65,12 @@ module.exports = {
       },
 
       {
-        test: /\.m?js$/,
+        test: /\.m?jsx?$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env']
           },
         },
       },
