@@ -35,5 +35,8 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "repository": "https://github.com/CleiberReis/vai-corinthians"
+  "repository": "https://github.com/CleiberReis/vai-corinthians",
+  "dependencies": {
+    "bulma-carousel": "^4.0.4"
+  }
 }

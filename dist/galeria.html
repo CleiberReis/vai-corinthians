@@ -10,6 +10,9 @@
 
   <script defer src='https://use.fontawesome.com/releases/v5.3.1/js/all.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+
   <link rel="stylesheet" href="./assets/css/styles.css">
 
 </head>
@@ -59,29 +62,39 @@
     </div>
 
     <div class="hero-body">
-      <div class="container m-0 p-0">
-        <div class="columns is-0-mobile">
-          <div class="column p-auto m-auto is-centered">
-            <img src="./assets/images/image28.jpeg" alt="">
-            <p class="has-text-centered">Fotos da galera da caravana</p>
-          </div>
 
-          <div class="column p-auto m-auto">
-            <img src="./assets/images/image29.jpeg" alt="">
-            <p class="has-text-centered">Foto da bandeira da caravana</p>
-          </div>
+      <section class="section">
+        <div class="container">
+          <!-- Start Carousel -->
+          <div id="carousel-galeria" class="carousel">
+            <div class="item-1">
+              <img src="./assets/images/image28.jpeg" alt="">
+            </div>
 
-          <div class="column p-auto m-auto is-centered">
-            <img src="./assets/images/image25.jpeg" alt="">
-            <p class="has-text-centered">Fotos da galera da caravana</p>
-          </div>
+            <div class="item-2">
+              <img src="./assets/images/image29.jpeg" alt="">
+            </div>
 
-          <div class="column p-auto m-auto">
-            <img src="./assets/images/image14.jpeg" alt="">
-            <p class="has-text-centered">Foto da bandeira da caravana</p>
+            <div class="item-3">
+              <img src="./assets/images/image14.jpeg" alt="">
+            </div>
+
+            <div class="item-4">
+              <img src="./assets/images/image30.jpeg" alt="">
+            </div>
+
+            <div class="item-5">
+              <img src="./assets/images/image09.jpeg" alt="">
+            </div>
+
+            <div class="item-6">
+              <img src="./assets/images/image10.jpeg" alt="">
+            </div>
           </div>
-        </div>
-      </div>
+          <!-- End Carousel -->
+      </section>
+
+    </div>
     </div>
 
     <div class="hero-foot">
@@ -96,7 +109,49 @@
 
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize all elements with carousel class.
+      const carousels = bulmaCarousel.attach('#carousel-galeria', {
+        initialSlide: 0,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true,
+        navigation: true,
+        navigationKeys: true,
+        loop: true,
+        breakpoint: [{
+          changePoint: 480,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }, {
+          changePoint: 640,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }, {
+          changePoint: 768,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }]
+      });
+
+      // Loop on each carousel initialized
+      for (var i = 0; i < carousels.length; i++) {
+        // Add listener to  event
+        carousels[i].on('show',function(){
+            $("img").addClass("img-zoom");
+          })
+      }
+
+    });
+  </script>
+  <script src="./assets/js/bundle.js"></script>
+
 </body>
-<script src="./assets/js/bundle.js"></script>
+
 
 </html>
