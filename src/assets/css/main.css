@@ -14,5 +14,6 @@ img #logo {
 }
 
 .img-galeria {
+  max-height: max-content;
   border: 0.8px solid black;
 }
