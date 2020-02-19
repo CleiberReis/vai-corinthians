@@ -12,3 +12,7 @@ img #logo {
   display: block;
   justify-content: center;
 }
+
+.img-galeria {
+  border: 0.8px solid black;
+}
